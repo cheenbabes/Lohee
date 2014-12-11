@@ -1,0 +1,523 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+
+
+body {
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	color: #999;
+	font-size: 12px;
+	background:#bfbfbf;
+
+	
+}
+
+
+h1, h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	margin:0 0 15px 0;
+}
+
+
+h1 {
+	font-size: 36px;
+	letter-spacing: -2px;
+	line-height: 100%;
+	color: #fff;
+	text-align: center;
+}
+
+h1.title {
+	font-size: 46px;
+	font-weight: 700;
+	color: #6a6a6a;
+
+
+}
+
+
+h2 {
+	font-size: 24px;
+}
+
+p {
+	margin: 0 0 15px 0;
+}
+
+.menuBtn {
+
+	background: center center no-repeat transparent;
+	background: #000;
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: 10px;
+
+}
+
+.active {
+	background: #3B5323;
+}
+.clear {
+	clear: both;
+}
+.wrap {
+		/*background:url(../images/bg.png) top left repeat-x;*/
+		width: 100%;
+		max-width: 1140px;
+		min-width: 960px;
+		z-index: 10;
+		position: relative;
+		margin: 0 auto;
+		padding: 0;
+
+}
+
+
+
+.section {
+	width: 100%;
+	max-width: 1140px;
+	min-width: 960px;
+	z-index: 10;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 0 20px 0;
+}
+
+
+.inner {
+	width: 1025px; /* 960px original  -- changed to 1025px to reflect better placement with other objects on the page*/
+	margin: 0 auto;
+	position: relative;
+	min-height: 50px;
+	padding: 20px 0px 0px 0px;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	
+}
+
+
+.inner-copy {
+	width: 1025px; /* use this tag to copy the header but modify alignments and margins*/
+	margin: 0 auto;
+	position: relative;
+	/*min-height: 50px; probably not necessary for this use*/
+	padding:30px 0;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	padding:0px 0px 30px 0px;
+	text-align:center;
+
+	
+}
+
+
+.inner img
+{
+	vertical-align:bottom;
+	}
+
+
+/* This is the selector i used for my menu, it needs to be set as position:absolute; */
+.subMenu {
+	position: absolute;
+	top: 572px;
+	height: 50px;
+	z-index: 1000;
+	width: 100%;
+	max-width: 1140px;
+	min-width: 960px;
+	background: #aabd46;
+
+}
+
+.subMenu .inner {
+	padding:0;
+	
+	font-weight: 400;
+}
+
+
+
+
+
+.subNavBtn {
+	display: block;
+	height: 35px;
+	width: 8.5%; /* 12% orig  also have tried 80px*/
+	float: left;
+	margin: 0px 0px 0 0;
+	text-decoration: none;
+	font-size: 14px;
+	padding: 15px 2% 0 2%;
+	text-align: center;
+	color: #fff;
+}
+
+.end {
+	margin: 0;
+}
+
+
+/* SECTIONS */
+.sTop {
+	min-height: 600px;
+	background:#FDE182;
+	color:#333;
+    /*FDE182*/
+	
+}
+
+
+
+.s1 {
+	min-height: 600px;
+	background: #856088;
+}
+
+
+.s2 {
+	min-height: 600px;
+	background: #005F82;
+}
+
+
+.s3 {
+	min-height: 500px;
+	background: #668D4E;
+}
+
+
+.s4 {
+	min-height: 500px;
+	background: #B77B82;
+	color: white;
+	text-align:center;
+}
+
+.s5 {
+	min-height: 650px;
+	background: #293b4d;
+	color: white;
+}
+
+.s6{
+	min-height: 550px;
+	background: #00868B ;
+	color: black;
+}
+
+/*Added style sections */
+.hidden
+{
+	visibility:hidden;
+	}
+
+
+/* STYLING FOR STORE IMAGE GALLERY*/
+div.frontimage
+{
+	display:inline-block;
+	margin: auto;
+	padding: 3px;
+	border: 1px solid #000000;
+	border-style:dashed;
+	height: auto;
+	width: auto;
+	text-align: center;
+}	
+div.frontimage img
+{
+  margin: 5px;
+  border: 1px solid #ffffff;
+  width: 300px;
+  height:300px;
+}
+
+
+div.img
+{
+	display:inline-block;
+	margin: auto;
+	padding: 3px;
+	border: 1px solid #000000;
+	border-style:dashed;
+	height: auto;
+	width: auto;
+	text-align: center;
+}	
+div.img img
+{
+  margin: 5px;
+  border: 1px solid #ffffff;
+  width: 180px;
+  height:200px	;
+ 
+}
+div.img a:hover img {border: 1px solid #0000ff;}
+div.desc
+{
+  text-align: center;
+  font-weight: normal;
+  width: 175px;
+  margin: 5px;
+}
+
+
+/* STYLING FOR BAMBOO PAGE */
+
+div.bamboo-container
+{
+	
+	margin: 10px;
+	overflow: auto;
+	text-align: center;
+	font-size: 9px;
+	}
+
+div.bamboo-img
+{
+	float:left;
+	}
+
+
+div.bamboo-img img /* img tag forces div class to apply to img */
+{
+	display:block;
+	height: 350px;
+	width: 300px;
+	margin: 0px 26px 0 0px;
+	border-radius::5px;
+	}
+
+div.bamboo-content  /*also use this tag to define the font of the section*/
+{
+	margin-left: -2px;
+	font-size:18px;
+	color: #FFF;
+	text-align:left;
+	text-align:justify;
+	}
+	
+	
+/* Styling for birth Page */
+
+div.birth-container
+{
+	margin: 10px;
+	overflow:auto;
+	}
+
+div.birth-img
+{
+	float:left;
+	}
+
+
+div.birth-img img /* img tag forces div class to apply to img */
+{
+	display:block;
+	height: 463px;
+	width: 300px;
+	margin: 0px 26px 10px 0px;
+	border-radius::5px;
+	border: 2px solid #999;	
+	}
+
+div.birth-content  /*also use this tag to define the font of the section*/
+{
+	margin-left: 23px;
+	font-size: 18px;
+	color: #FFF;
+	text-align: left;
+	}
+	
+	
+/* Styling for the Mothers page */
+
+div.mothers-container
+{
+	margin: 10px;
+	overflow:auto;
+	}
+
+div.mothers-img
+{
+	float:right;
+	}
+
+
+div.mothers-img img /* img tag forces div class to apply to img */
+{
+	display:block;
+	height: 463px;
+	width: 300px;
+	margin: 0px 0px 10px 26px;
+	border: 2px solid #999;	
+	}
+
+div.mothers-content  /*also use this tag to define the font of the section*/
+{
+	margin-left:0;
+	font-size:18px;
+	color: #FFF;
+	}
+	
+/*CSS for contact form and page */
+div.contact-container
+{
+	margin: 0px;
+	overflow: auto; 
+	padding: 0px 30px 0px 0px;
+	width:1025px;
+	position:relative;
+	}
+	
+div.contact-form
+{
+	float:right;
+	}	
+	
+	
+div.contact-contents
+{
+	margin: 0px 30px 10px 10px;
+	overflow:auto;
+	color:#fff;
+	max-width: 300px;
+	}
+	
+div.contactbox
+{
+	max-height:100px;
+	min-height:100px;
+	max-width:100px;
+	min-width:100px;
+	}
+
+
+div.center-align
+{
+	min-height: 630px;
+	background:#FDE182;
+	color:#333;
+	text-align:center;
+	}
+	
+div.imageGallery img
+{
+	height:283.3px;
+	width:183.3px;
+	margin: 5px;
+	border: 1px solid #999;
+	}
+	
+div.imageGallery-container
+{
+	margin: 10px;
+	overflow:auto;
+	text-align:center:
+	}
+	
+div.button-click
+{
+	border:10px;
+	border-color:#333;
+	font-size:16px;
+	color:#000;
+	background-color:#999;
+	vertical-align:middle;
+	text-align:center;
+	width:300px;
+	margin: 0px 26px 0 23px;
+	}
+	
+div.baseline
+{
+	text-align: justify;
+	}
+	
+div.baseline:after
+{
+	content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    font-size:0;
+    line-height:0;}	
+
+div.baseline_nav
+{
+	display:inline-block;
+	vertical-align:baseline;
+	}
+	
+div.baseline_link
+{
+	display:inline-block;}	
+	
+
+div.care
+{
+	float:right;
+	width: 700px;
+	}	
+
+	
+/*THIS IS STYLING FOR THE BUTTON*/
+
+.button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fed897;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fed897;
+	box-shadow:inset 0px 1px 0px 0px #fed897;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f6b33d), color-stop(1, #d290d45) );
+	background:-moz-linear-gradient( center top, #f6b33d 5%, #d290d45 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6b33d', endColorstr='#d290d45');
+	background-color:#f6b33d;
+	-webkit-border-top-left-radius:10px;
+	-moz-border-radius-topleft:10px;
+	border-top-left-radius:10px;
+	-webkit-border-top-right-radius:10px;
+	-moz-border-radius-topright:10px;
+	border-top-right-radius:10px;
+	-webkit-border-bottom-right-radius:10px;
+	-moz-border-radius-bottomright:10px;
+	border-bottom-right-radius:10px;
+	-webkit-border-bottom-left-radius:10px;
+	-moz-border-radius-bottomleft:10px;
+	border-bottom-left-radius:10px;
+	text-indent:0px;
+	border:1px solid #eda933;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width:300px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 9px #cd8a15;
+	margin: 0px 26px 0px 0px; /*this should sync with div-birth img img */
+}
+.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d290d45), color-stop(1, #f6b33d) );
+	background:-moz-linear-gradient( center top, #d290d45 5%, #f6b33d 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d290d45', endColorstr='#f6b33d');
+	background-color:#d290d45;
+}.button:active {
+	position:relative;
+	top:1px;
+}
+
+/* This button was generated using CSSButtonGenerator.com */
