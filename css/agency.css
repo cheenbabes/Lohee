@@ -17,6 +17,22 @@ body {
     color: #fed136;
 }
 
+.text-bamboo{
+    color: #668d4e;
+}
+
+.text-birth{
+    color: #005F82;
+}
+
+.text-moms{
+    color: #856088;
+}
+
+.text-store{
+    color: #B77B82;
+}
+
 p {
     font-size: 14px;
     line-height: 1.75;
