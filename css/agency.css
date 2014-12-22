@@ -30,12 +30,11 @@ body {
 }
 
 .text-store{
-    color: #B77B82;
+    color: #333;
 }
 
-.store-image img{
-    width:253px;
-    height: 204px;
+.view-cart{
+    
 }
 
 p {
