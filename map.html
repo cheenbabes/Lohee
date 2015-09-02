@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Harinama Sankirtan Map</title>
+    <!--    CSS-->
+    <link rel="stylesheet" href="css/jquery-jvectormap-2.0.2.css" type="text/css">
+
+    <!--    Javascript-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/us_aea_en.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="usa-map" style="width: 1070px; height: 600px"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+<script>$(document).ready(function (){
+
+	var bookscores =  {
+		"US-CA":95979.35  ,
+		"US-KS":30878.25 ,
+		"US-IL":8935.55  ,
+		"US-FL":13027  ,
+		"US-MD":10811.2 ,
+		"US-MS":7233.75 ,
+		"US-DC":5417.95 ,
+		"US-CO":12487.8 ,
+		"US-TX":7412.45 ,
+		"US-GA":4117.15  ,
+		"US-NY":4552.5  ,
+		"US-AZ":2391  ,
+		"US-NC":2391  ,
+		"US-PA":924.75  ,
+		"US-LA":2391  ,
+		"US-CT":627.25,
+		"US-MO":475.5,
+		"US-WA":368.25,
+		"US-MN":234,
+		"US-NV":98.25,
+		"US-HI":140.5,
+		"US-OH":33.25,
+		"CA-ON": 6825.75,
+		"CA-BC": 2384.25
+	};
+                 
+
+	var cities =[
+		{latLng: [30.3,-97.90] , name: 'Austin', hours: 0},    
+		{latLng: [40, -104],name: 'Denver', hours: 10 },
+		{latLng: [32.1, -110],name: 'Tucson', hours: 0},
+		{latLng: [33.5, -118.2],name: 'Los Angeles', hours: 0},
+		{latLng: [37.3, -122],name: 'Silicon Valley', hours: 2.5},
+		{latLng: [40.8, -73.9],name: 'New York City', hours: 0},
+		{latLng: [25.8, -80.2],name: 'Miami', hours: 0},
+		{latLng: [41.90,-87.65], name: 'Chicago', hours: 0},
+		{latLng: [33.54,-117.78], name: 'Laguna Beach', hours: 0},
+		{latLng: [40.92,-74.34], name: 'New Jersey', hours: 0},
+		{latLng: [35.87, -78.78], name: 'Hillsborough', hours: 0 },
+		{latLng: [38.70,-121.60], name: 'Sacramento', hours: 0 },
+		{latLng: [32.73, -117.17], name: 'San Diego', hours: 0},
+		{latLng: [43.65, -79.38], name: 'Toronto', hours: 0}
+	]; 
+	
+	cityAreaData = cities.map(function(a) {return a.hours});
+
+	usa_map = new jvm.Map({
+		container: jQuery('#usa-map'),
+		backgroundColor: '#bdbdbd', //b3d1ff
+		zoomOnScroll: false,
+		map: 'us_aea_en',
+		markers: cities,
+		regionsSelectable: false,
+		markersSelectable: true,
+		regionStyle:{
+			initial:{ 
+				fill: '#ececf8',
+				'stroke': '#882222',
+				'stroke-width': 0.5,
+				'stroke-opacity': 0.4
+			},
+			hover:{
+				'fill-opacity': 0.8
+			}
+		},
+		markerStyle:{
+			initial:{
+				fill:'#259073',
+				stroke: '#ffffff',
+				'fill-opacity': 0.5
+			}
+		},
+		series: {
+			markers:[{
+				attribute: 'r',
+				scale: [7, 30],
+				values: cityAreaData,
+				normalizeFunction: 'linear',
+
+			}],
+			regions:[{
+				values: bookscores,
+				scale: ['#c6dbef', '#6baed6', '#4292c6', '#2171b5'],
+				normalizeFunction: 'polynomial',
+				attribute: 'fill',
+				legend:{
+					vertical: false,
+					title: "Books points year to date"
+				}			
+			}]
+		},
+		onRegionTipShow: function(e, el, code){
+			if(bookscores[code]){
+				el.html(el.html()+ ': '+bookscores[code] + ' book points');
+			}
+			else{
+				el.html(el.html());
+			}
+		},
+		onMarkerTipShow: function(event, label, index){
+			label.html(
+				'<b>'+cities[index].name+'</b><br>'+
+				'<b>Hours of Harinam: </b>'+cityAreaData[index]
+			);
+		}
+	})
+})
+
+</script>
